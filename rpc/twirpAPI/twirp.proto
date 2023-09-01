@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package twirpAPI;
+option go_package = "twirp-oauth-backend/rpc/twirpAPI";
+
+
+service AuthService {
+  rpc Login(LoginRequest) returns (LoginResponse);
+}
+
+message LoginRequest {
+  string oauth_token = 1;
+}
+
+message LoginResponse {
+  string user_id = 1;
+}
